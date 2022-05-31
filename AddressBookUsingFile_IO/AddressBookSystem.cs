@@ -34,7 +34,6 @@ namespace AddressBookUsingFile_IO
             Console.WriteLine("Enter Zip : ");
             contact.Zip = int.Parse(Console.ReadLine());
 
-
             Console.WriteLine("Enter Phone Number : ");
             contact.PhoneNumber = Console.ReadLine();
 
@@ -186,7 +185,7 @@ namespace AddressBookUsingFile_IO
             }
             Console.WriteLine("Given contact doesn't exist in address book.");
         }
-        public void AddmultipleContacts(int n)
+        public void AddMultipleContacts(int n)
         {
             while (n > 0)
             {
@@ -197,11 +196,11 @@ namespace AddressBookUsingFile_IO
         }
         public void UniqueContact()
         {
-            Console.Write("Enter Count-How Many contact You want to add?");
+            Console.Write("Enter Count-How Many contact You want to add: ");
             int number = Convert.ToInt32(Console.ReadLine());
             for (int i = 1; i <= number; i++)
             {
-                Console.WriteLine("Press 1 If you want to add a new Contact to the Address Book");
+                Console.WriteLine("Press 1, If you want to add a new Contact to the Address Book");
                 switch (Console.ReadLine())
                 {
                     case "1":
@@ -213,7 +212,7 @@ namespace AddressBookUsingFile_IO
                             if (People.Exists(e => e.FirstName == fname))//used Lambda Expression to check for duplicate entry
                             {
                                 Console.ForegroundColor = ConsoleColor.Red;
-                                Console.WriteLine($"Yes, A person having name  '{fname}' exists in our list");
+                                Console.WriteLine($"Yes, '{fname}' already exists in our list");
                                 Console.ResetColor();
                                 Console.ReadKey();
                                 PeopleDetail();
